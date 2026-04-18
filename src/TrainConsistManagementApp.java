@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Train Consist Management App
@@ -58,3 +56,4 @@ public class TrainConsistManagementApp {
         }
     }
 }
+
