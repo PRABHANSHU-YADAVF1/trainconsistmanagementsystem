@@ -31,6 +31,9 @@ public class TrainConsistManagementApp {
         System.out.println("\nSorted Bogie Names (Alphabetical):");
         System.out.println(Arrays.toString(bogieNames));
     }
+}   
+
+ 
 }
 }
 
