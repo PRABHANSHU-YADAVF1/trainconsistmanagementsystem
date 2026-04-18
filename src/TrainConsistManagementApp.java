@@ -1,3 +1,4 @@
+
 /**
  * Train Consist Management App
  * UC16: Sort Passenger Bogies using Bubble Sort
@@ -51,3 +52,5 @@ public class TrainConsistManagementApp {
         System.out.println("]");
     }
 }
+}
+
