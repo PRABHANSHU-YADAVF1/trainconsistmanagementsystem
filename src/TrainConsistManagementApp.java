@@ -1,8 +1,9 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * Train Consist Management App
- * UC17: Sort Bogie Names using Arrays.sort()
+ * UC19: Binary Search for Bogie ID
  */
 
 public class TrainConsistManagementApp {
@@ -13,24 +14,50 @@ public class TrainConsistManagementApp {
         System.out.println(" Train Consist Management App");
         System.out.println("=========================================\n");
 
-        System.out.println("========== UC17 - Arrays.sort() ==========\n");
+        System.out.println("========== UC19 - Binary Search ==========\n");
 
-        // Array of bogie names
-        String[] bogieNames = {
-            "Sleeper", "AC Chair", "First Class", "General", "Luxury"
-        };
+        // Unsorted array (handled inside)
+        String[] bogieIds = {"BG309", "BG101", "BG550", "BG205", "BG412"};
 
-        // Display original array
-        System.out.println("Original Bogie Names:");
-        System.out.println(Arrays.toString(bogieNames));
+        // ----- SORT FIRST (IMPORTANT) -----
+        Arrays.sort(bogieIds);
 
-        // ----- SORT USING BUILT-IN METHOD -----
-        Arrays.sort(bogieNames);
+        System.out.println("Sorted Bogie IDs:");
+        System.out.println(Arrays.toString(bogieIds));
 
-        // Display sorted array
-        System.out.println("\nSorted Bogie Names (Alphabetical):");
-        System.out.println(Arrays.toString(bogieNames));
+        // Input
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("\nEnter Bogie ID to search: ");
+        String key = scanner.nextLine();
+
+        // ----- BINARY SEARCH -----
+        int low = 0;
+        int high = bogieIds.length - 1;
+        boolean found = false;
+
+        while (low <= high) {
+
+            int mid = (low + high) / 2;
+
+            int comparison = bogieIds[mid].compareTo(key);
+
+            if (comparison == 0) {
+                found = true;
+                break;
+            } else if (comparison < 0) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+
+        // Result
+        if (found) {
+            System.out.println("Bogie ID FOUND ✅");
+        } else {
+            System.out.println("Bogie ID NOT FOUND ❌");
+        }
+
+        scanner.close();
     }
-}   
-
- 
+}
