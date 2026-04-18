@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Train Consist Management App
@@ -67,3 +64,4 @@ public class TrainConsistManagementApp {
         System.out.println("Stream Time : " + streamTime + " ns");
     }
 }
+
