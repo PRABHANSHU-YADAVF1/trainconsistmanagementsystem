@@ -32,3 +32,5 @@ public class TrainConsistManagementApp {
         System.out.println(Arrays.toString(bogieNames));
     }
 }
+}
+
